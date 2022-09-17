@@ -1,0 +1,19 @@
+# This make the data persistent.
+volumes:
+  mariadb-data:
+    driver: local
+
+services:
+  mariadb:
+    image: 'mariadb:latest'
+    volumes:
+      - "mariadb-data:/var/lib/postgresql/data"
+    restart: 'always'
+    ports:
+      - "${DB_EXPOSED_PORT:-3306}:3306"
+    environment:
+      MARIADB_ROOT_USER: "${DB_USERNAME:-root}"
+      MARIADB_ROOT_PASSWORD: "${DB_PASSWORD:-mypass}"
+      MARIADB_DATABASE: "${DB_DB_NAME:-mariadb}"
+      MARIADB_SKIP_TEST_DB: "yes"
+

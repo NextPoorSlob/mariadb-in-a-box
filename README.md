@@ -6,9 +6,9 @@ database for testing projects locally, it can also be added to a Docker Compose 
 
 ## To Use
 There are three ways to run the database.
-- [Docker](#Docker)
-- [Docker Compose](#Docker Compose)
-- [GNU Make](#GNU Make)
+- [Docker](#docker)
+- [Docker Compose](#docker-compose)
+- [GNU Make](#gnu-make)
 
 ### Docker
 This is a standard Docker build file.  It does create a default administrator account (username: root).  There is no
